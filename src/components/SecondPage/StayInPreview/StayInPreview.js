@@ -1,38 +1,39 @@
 import React from "react";
+import StayInPreviewCard from "./StayInPreviewCard/StayInPreviewCard";
 
 const StayInPreview = () => {
   const apartments = [
     {
       id: 1,
-      image: "",
+      image: "https://imgur.com/UItwPbP.jpg",
       title: "Light bright airy stylish apt & safe peaceful stay",
       people: "4 guests  2 bedrooms  2 beds  2 baths",
       features: "With Air conditioned Kitchen",
       cancellation: "Cancellation flexibility available",
       rating: "4.9 (20)",
-      price: "$34/night",
+      price: "$34",
       total: "$167 total",
     },
     {
       id: 2,
-      image: "",
+      image: "https://imgur.com/iZpverx.jpg",
       title: "Apartment in Lost Panorama",
       people: "4 guests  2 bedrooms  2 beds  2 baths",
       features: "With Air conditioned Kitchen",
       cancellation: "Cancellation flexibility available",
       rating: "4.8 (10)",
-      price: "$52/night",
+      price: "$52",
       total: "$167 total",
     },
     {
-      id: 1,
-      image: "",
+      id: 3,
+      image: "https://imgur.com/AO1d2I8.jpg",
       title: "Light bright airy stylish apt & safe peaceful stay",
       people: "4 guests  2 bedrooms  2 beds  2 baths",
       features: "With Air conditioned Kitchen",
       cancellation: "Cancellation flexibility available",
       rating: "4.9 (25)",
-      price: "$44/night",
+      price: "$44",
       total: "$167 total",
     },
   ];
@@ -60,26 +61,9 @@ const StayInPreview = () => {
       </section>
 
       <section className="mt-4">
-        <div className="card mb-3 border-0" style={{ maxWidth: "540px" }}>
-          <div className="row g-0">
-            <div className="col-md-4">
-              <img src="..." alt="..." />
-            </div>
-            <div className="col-md-8">
-              <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p className="card-text">
-                  <small className="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        {apartments.map((apartment) => (
+          <StayInPreviewCard key={apartment.id} apartment={apartment} />
+        ))}
       </section>
     </div>
   );
